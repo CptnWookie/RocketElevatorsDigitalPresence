@@ -209,106 +209,166 @@
 			<hr class="m-0" /><!-- 1px line separator -->
 
 				
-			<!-- Quote -->
+		<!-- Quote -->
 			<section id="quote">
 				<div class="container">
 					
 					<div class="heading-title heading-dotted text-center">
 						<h2>Get a Quote</h2>
 					</div>
-
-					<div class="text-center">
-
-						<div class="container">
-
-							<div class="row">
-								
-								<div class="col-sm-6">	
-									<p>Select your Building Type</p>
-								</div>	
-
-								<div class="col-sm-6">	
-								
-									<select id="buildingType">
-										<option>choose</option>
-										<option value="residential">Residential</option>
-										<option value="commercial">Commercial</option>
-										<option value="corporate">Corporate</option>
-										<option value="hybrid">Hybrid</option>
-									</select>
-								</div>
-
-							</div>	
-
-							<div class="row">
-								
-								<div class="col-sm-6">	
-									<p>Text Text Text Text Text Text </p>
-								</div>	
-
-								<div class="col-sm-6">	
-								
-									<input id="area" type="text" value="" placeholder="floor area/sq.m">
-								</div>
-
-							</div>	
-
-							<div class="row">
-								
-								<div class="col-sm-6">	
-									<p>Text Text Text Text Text Text </p>
-								</div>	
-
-								<div class="col-sm-6">	
-								
-									<input id="area" type="text" value="" placeholder="floor area/sq.m">
-								</div>
-
-							</div>	
+					
+					<div>  
+						<form name="quote" >                                                                                   
+							<div class="row justify-content-center">
+								<lable class="col-md-4">Select Building Type</label>
 							
-							<div class="row">
-								
-								<div class="col-sm-6">	
-									<p>Text Text Text Text Text Text </p>
-								</div>	
-
-								<div class="col-sm-6">	
-								
-									<input id="area" type="text" value="" placeholder="floor area/sq.m">
-								</div>
-
-							</div>	
-
-							<div class="row">
-								
-								<div class="col-sm-6">	
-									<p>Text Text Text Text Text Text </p>
-								</div>	
-
-								<div class="col-sm-6">	
-								
-									<input id="area" type="text" value="" placeholder="floor area/sq.m">
-								</div>
-
-							</div>	
-
-							<div class="row">
-								<input id="area" type="text" value="" placeholder="floor area/sq.m">	
-							</div>		
-
-							<input id="quote" type="text" placeholder="total" value="">
-						
-							<button id="calculate">button</button>
-								
+							<select name="buildingType" id="buildingType" class="col-md-4" onchange="showHide()">
+								<option value="choose">Choose</option>
+								<option value="residential">Residential</option>
+								<option value="commercial">Commercial</option>
+								<option value="corporate">Corporate</option>
+								<option value="hybrid">Hybrid</option>                            
+							</select>
 						</div>
-						<script type="text/javascript" src="quote.js"></script>
-				
+						</form> 
+					</div>  
+
+			<!-- Residential -->		
+					<div id="residential">
+						<ul>
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Residential</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>The number of floors contained in the building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>The number of basements contained in the building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]"></div>
+							</li>
+						</ul>              
 					</div>
 
-				</div>
+			<!-- Commercial -->
+					<div id="commercial">
+						<ul>
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Commercial</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]"></div>
+							</li>
 
-			</section>
-			<!-- /PORTFOLIO -->
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>The number of floors contained in the building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>The number of basements contained in the building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]"></div>
+							</li>
+						</ul>                
+					</div>
+
+			<!-- Corporate -->
+					<div id="corporate">
+						<ul>
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Corporate</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>The number of floors contained in the building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>The number of basements contained in the building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]"></div>
+							</li>
+						</ul>         
+					</div>
+
+			<!-- Hybrid -->
+					<div id="hybrid">
+						<ul>
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Hybrid</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>The number of floors contained in the building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>The number of basements contained in the building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]"></div>
+							</li>
+						</ul>               
+					</div>
+				</div>	
+				
+			</section>	
+				
+					<script> 
+
+						var residential = document.getElementById("residential");
+						var commercial = document.getElementById("commercial");
+						var corporate = document.getElementById("corporate");
+						var hybrid = document.getElementById("hybrid");
+																	
+						document.addEventListener("DOMContentLoaded", function(event){
+								document.getElementById("residential").style.display="none";
+								document.getElementById("commercial").style.display="none";
+								document.getElementById("corporate").style.display="none";
+								document.getElementById("hybrid").style.display="none";
+                            });
+
+						function showHide(value) {
+							var buildingType = document.getElementById("buildingType").value;
+
+							console.log(buildingType, "buildingType")
+    								console.log(document.getElementById("residential").value)
+
+							if(buildingType == document.getElementById("choose")){
+								document.getElementById("residential").style.display = "block";
+								document.getElementById("commercial").style.display = "none";
+								document.getElementById("corporate").style.display = "none";
+								document.getElementById("hybrid").style.display = "none";
+								}
+							else if(buildingType == document.getElementById("residential")){
+								document.getElementById("residential").style.display = "block";
+								document.getElementById("commercial").style.display = "none";
+								document.getElementById("corporate").style.display = "none";
+								document.getElementById("hybrid").style.display = "none";
+								}
+							else if(buildingType == document.getElementById("commercial")){
+								document.getElementById("residential").style.display="none";
+								document.getElementById("commercial").style.display="block";
+								document.getElementById("corporate").style.display="none";
+								document.getElementById("hybrid").style.display="none";
+								}
+							else if(buildingType == document.getElementById("corporate")){
+								document.getElementById("residential").style.display="none";
+								document.getElementById("commercial").style.display="none";
+								document.getElementById("corporate").style.display="block";
+								document.getElementById("hybrid").style.display="none";
+								}
+							else if(buildingType == document.getElementById("hybrid"))
+								document.getElementById("residential").style.display="none";
+								document.getElementById("commercial").style.display="none";
+								document.getElementById("corporate").style.display="none";
+								document.getElementById("hybrid").style.display="block";
+								
+							}             
+
+					</script>
 
 
 
@@ -408,9 +468,7 @@
 			GMAP.JS 
 			http://hpneo.github.io/gmaps/
 		-->
-		<!--<script src="//maps.google.com/maps/api/js?key=AIzaSyCsRfUCjYVqw-fJMk-ZKOsJby8Nmb9lE7g"></script>-->
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsRfUCjYVqw-fJMk-ZKOsJby8Nmb9lE7g&callback=initMap"
-  type="text/javascript"></script>
+		<script src="//maps.google.com/maps/api/js?key=AIzaSyCsRfUCjYVqw-fJMk-ZKOsJby8Nmb9lE7g"></script>
 		<script src="assets/plugins/gmaps.js"></script>
 		<script>
 
