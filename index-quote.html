@@ -220,16 +220,17 @@
 					<div>  
 						<form name="quote" >                                                                                   
 							<div class="row justify-content-center">
-								<lable class="col-md-4">Select Building Type</label>
+								<lable class="col-md-6">Select Building Type</label>
+									
 							
-							<select name="buildingType" id="buildingType" class="col-md-4" onchange="showHide()">
+							<select name="buildingType" id="buildingType" class="col-md-5" onchange="showHide()">
 								<option value="choose">Choose</option>
 								<option value="residential">Residential</option>
 								<option value="commercial">Commercial</option>
 								<option value="corporate">Corporate</option>
 								<option value="hybrid">Hybrid</option>                            
 							</select>
-						</div>
+							</div>
 						</form> 
 					</div>  
 
@@ -331,41 +332,44 @@
                             });
 
 						function showHide(value) {
+
+							console.log("showHide");
+
 							var buildingType = document.getElementById("buildingType").value;
 
-							console.log(buildingType, "buildingType")
-    								console.log(document.getElementById("residential").value)
+							console.log("buildingType", buildingType);
+    						//console.log(document.getElementById("residential").value)
 
-							if(buildingType == document.getElementById("choose")){
+							if(buildingType == "choose"){
+								document.getElementById("residential").style.display = "none";
+								document.getElementById("commercial").style.display = "none";
+								document.getElementById("corporate").style.display = "none";
+								document.getElementById("hybrid").style.display = "none";
+								}
+							else if(buildingType == "residential"){
 								document.getElementById("residential").style.display = "block";
 								document.getElementById("commercial").style.display = "none";
 								document.getElementById("corporate").style.display = "none";
 								document.getElementById("hybrid").style.display = "none";
 								}
-							else if(buildingType == document.getElementById("residential")){
-								document.getElementById("residential").style.display = "block";
-								document.getElementById("commercial").style.display = "none";
-								document.getElementById("corporate").style.display = "none";
-								document.getElementById("hybrid").style.display = "none";
-								}
-							else if(buildingType == document.getElementById("commercial")){
+							else if(buildingType == "commercial"){
 								document.getElementById("residential").style.display="none";
 								document.getElementById("commercial").style.display="block";
 								document.getElementById("corporate").style.display="none";
 								document.getElementById("hybrid").style.display="none";
 								}
-							else if(buildingType == document.getElementById("corporate")){
+							else if(buildingType == "corporate"){
 								document.getElementById("residential").style.display="none";
 								document.getElementById("commercial").style.display="none";
 								document.getElementById("corporate").style.display="block";
 								document.getElementById("hybrid").style.display="none";
 								}
-							else if(buildingType == document.getElementById("hybrid"))
+							else if(buildingType == "hybrid"){
 								document.getElementById("residential").style.display="none";
 								document.getElementById("commercial").style.display="none";
 								document.getElementById("corporate").style.display="none";
 								document.getElementById("hybrid").style.display="block";
-								
+							}
 							}             
 
 					</script>
