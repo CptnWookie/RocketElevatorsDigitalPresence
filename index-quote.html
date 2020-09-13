@@ -238,18 +238,18 @@
 					<div id="residential">
 						<ul>
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>Residential</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]"></div>
+								<div class="col-md-6"><p>Number of Floors Contained in the Building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]" id="floorsResidential"></div>
 							</li>
 
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>The number of floors contained in the building</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]"></div>
+								<div class="col-md-6"><p>Number of Basements Contained in the Building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]" id="basementsResidential"></div>
 							</li>
 
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>The number of basements contained in the building</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]"></div>
+								<div class="col-md-6"><p>Number of Apartment in the Building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]" id="apartmentsResidential"></div>
 							</li>
 						</ul>              
 					</div>
@@ -258,18 +258,28 @@
 					<div id="commercial">
 						<ul>
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>Commercial</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]"></div>
+								<div class="col-md-6"><p>Number of Floors Contained in the Building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]" id="floorsCommercial"></div>
 							</li>
 
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>The number of floors contained in the building</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]"></div>
+								<div class="col-md-6"><p>Number of Basements Contained in the Building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]" id="basementsCommercial"></div>
 							</li>
 
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>The number of basements contained in the building</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]"></div>
+								<div class="col-md-6"><p>Number of Parking Space Available</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfParking][required]" id="parkingsCommercial"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Number of Distint Businesses</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBusinesses][required]" id="businessesCOmmercial"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Number of Elevator Cages to be Deployed</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfCages][required]" id="cagesCommercial"></div>
 							</li>
 						</ul>                
 					</div>
@@ -278,18 +288,28 @@
 					<div id="corporate">
 						<ul>
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>Corporate</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]"></div>
+								<div class="col-md-6"><p>Number of Floors Contained in the Building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]" id="floorsCorporate"></div>
 							</li>
 
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>The number of floors contained in the building</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]"></div>
+								<div class="col-md-6"><p>Number of Basements Contained in the Building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]" id="basementsCorporate"></div>
 							</li>
 
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>The number of basements contained in the building</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]"></div>
+								<div class="col-md-6"><p>Number of Parking Space Available</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfParking][required]" id="parkingsCorporate"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Number of Separate Tenant Companies</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfCompanies][required]" id="companiesCorporate"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Maximum Number of Occupants per Floor</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfOccupants][required]" id="occupantsCorporate"></div>
 							</li>
 						</ul>         
 					</div>
@@ -298,18 +318,63 @@
 					<div id="hybrid">
 						<ul>
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>Hybrid</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]"></div>
+								<div class="col-md-6"><p>Number of Floors Contained in the Building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]" id="floorsHybrid"></div>
 							</li>
 
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>The number of floors contained in the building</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]"></div>
+								<div class="col-md-6"><p>Number of Basements Contained in the Building</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]" id="basementsHybrid"></div>
 							</li>
 
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>The number of basements contained in the building</p></div>
-								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBasements][required]"></div>
+								<div class="col-md-6"><p>Number of Parking Space Available</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfParking][required]" id="parkingsHybrid"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Number of Distint Businesses</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfBusinesses][required]" id="businessesHybrid"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Maximum Number of Occupants per Floor</p></div>
+								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfOccupants][required]" id="occupantsHybrid"></div>
+							</li>
+
+							<li class="row justify-content-center">
+								<div class="col-md-6"><p>Number of Hours of Activity of the Building (maximum 24hrs)</p>
+								<select name="maxActivity" id="activityHybrid" type="number" class="col-md-5" name="contact[numberOfHours][required]">
+									<option value=""></option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+								</select>
+								
+									
+								</div>
+								
 							</li>
 						</ul>               
 					</div>
