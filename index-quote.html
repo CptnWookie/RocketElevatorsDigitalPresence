@@ -238,7 +238,7 @@
 					<div id="residential">
 						<ul>
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>Number of Floors Contained in the Building</p></div>
+								<div class="col-md-6"><p>Number of Floors Contained in the Building (basements included)</p></div>
 								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]" id="floorsResidential"></div>
 							</li>
 
@@ -251,14 +251,35 @@
 								<div class="col-md-6"><p>Number of Apartment in the Building</p></div>
 								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfApartments][required]" id="apartmentsResidential"></div>
 							</li>
-						</ul>              
-					</div>
 
+							<li class="row justify-content-center">
+								<label class="col-md-6"><p>Product Line Choice</p>
+								<select name="prodLineResidentials" id="prodLineResidentials" type="number" class="col-md-6" name="contact[prodLineResidentials][required]">
+									<option value=""></option>
+									<option value="standard">Standard</option>
+									<option value="premium">Premium</option>
+									<option value="excelium">Excelium</option>
+								</select>
+							</label>
+							</li>
+
+							<!--<li class="row justify-content-center">
+								<div class="col-md-6"><p>Estimated Cost</p></div>
+								<div class="col-md-2"><input type="text" value="" class="form-control" name="contact[totalResidentials][required]" id="totalResidentials"></div>
+							</li>-->
+						</ul>  
+						
+						<form class="row justify-content-center">
+							<input type="button" onclick="totalResidentials()" value="Estimate">
+						</form>
+						<div id="totalCostResidentials"></div>
+					</div>
+						
 			<!-- Commercial -->
 					<div id="commercial">
 						<ul>
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>Number of Floors Contained in the Building</p></div>
+								<div class="col-md-6"><p>Number of Floors Contained in the Building (basements included)</p></div>
 								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]" id="floorsCommercial"></div>
 							</li>
 
@@ -288,7 +309,7 @@
 					<div id="corporate">
 						<ul>
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>Number of Floors Contained in the Building</p></div>
+								<div class="col-md-6"><p>Number of Floors Contained in the Building (basements included)</p></div>
 								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]" id="floorsCorporate"></div>
 							</li>
 
@@ -318,7 +339,7 @@
 					<div id="hybrid">
 						<ul>
 							<li class="row justify-content-center">
-								<div class="col-md-6"><p>Number of Floors Contained in the Building</p></div>
+								<div class="col-md-6"><p>Number of Floors Contained in the Building (basements included)</p></div>
 								<div class="col-md-2"><input required type="number" value="" class="form-control" name="contact[numberOfFloors][required]" id="floorsHybrid"></div>
 							</li>
 
@@ -384,6 +405,8 @@
 				
 					<script> 
 
+						//ShowHide Function
+
 						var residential = document.getElementById("residential");
 						var commercial = document.getElementById("commercial");
 						var corporate = document.getElementById("corporate");
@@ -403,8 +426,7 @@
 							var buildingType = document.getElementById("buildingType").value;
 
 							console.log("buildingType", buildingType);
-    						//console.log(document.getElementById("residential").value)
-
+    						
 							if(buildingType == "choose"){
 								document.getElementById("residential").style.display = "none";
 								document.getElementById("commercial").style.display = "none";
@@ -436,6 +458,45 @@
 								document.getElementById("hybrid").style.display="block";
 							}
 							}             
+
+					//Residential Estimate Cost
+
+						function totalResidentials(){
+
+							var standardUnitPrice = "7565";
+							var premiumUnitPrice = "12345";
+							var exceliumUnitPrice = "15400";
+							var standardInstallFee = "1.10";
+							var premiumInstallFee = "1.13";
+							var exceliumInstallFee = "1.16";
+							var floorsResidential = document.getElementById("floorsResidential").value;
+							var basementsResidential = document.getElementById("basementsResidential").value;
+							var apartmentsResidential = document.getElementById("apartmentsResidential").value;
+						
+
+							if (prodLineResidentials == "standard"){
+								var totalStandardResidentials = ((parseInt(apartmentsResidential) * (parseInt(floorsResidential) - parseInt(basementsResidential))) * parseInt(standardUnitPrice) * parseInt(standardInstallFee));
+								document.getElementById("totalCostResidentials").innerHTML = totalStandardResidentials;
+								}	
+
+							else if (prodLineResidentials == "premium"){
+								var totalPremiumResidentials = ((parseInt(apartmentsResidential) * (parseInt(floorsResidential) - parseInt(basementsResidential))) * parseInt(premiumUnitPrice) * parseInt(premiumInstallFee));
+								document.getElementById("totalCostResidentials").innerHTML = totalPremiumResidentials;
+								}	
+							
+							else if (prodLineResidentials == "excelium"){
+								var totalExceliumResidentials = ((parseInt(apartmentsResidential) * (parseInt(floorsResidential) - parseInt(basementsResidential))) * parseInt(exceliumUnitPrice) * parseInt(exceliumInstallFee));
+								document.getElementById("totalCostResidentials").innerHTML = totalPremiumResidentials;
+								}
+
+							console.log(totalResidentials);
+							
+							};
+
+
+
+
+
 
 					</script>
 
