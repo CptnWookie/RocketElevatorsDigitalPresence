@@ -270,7 +270,7 @@
 						</ul>  
 						
 						<form class="row justify-content-center">
-							<input type="button" onclick="totalResidentials()" value="Estimate">
+							<input type="button" OnClick="totalResidentials" value="Estimate">
 						</form>
 						<div id="totalCostResidentials"></div>
 					</div>
@@ -472,31 +472,24 @@
 							var floorsResidential = document.getElementById("floorsResidential").value;
 							var basementsResidential = document.getElementById("basementsResidential").value;
 							var apartmentsResidential = document.getElementById("apartmentsResidential").value;
+							var nbElevators = parseInt(apartmentsResidential) * (parseInt(floorsResidential) - parseInt(basementsResidential));
 						
 
 							if (prodLineResidentials == "standard"){
-								var totalStandardResidentials = ((parseInt(apartmentsResidential) * (parseInt(floorsResidential) - parseInt(basementsResidential))) * parseInt(standardUnitPrice) * parseInt(standardInstallFee));
+								var totalStandardResidentials = parseInt(nbElevators) * parseInt(standardUnitPrice) * parseInt(standardInstallFee);
 								document.getElementById("totalCostResidentials").innerHTML = totalStandardResidentials;
 								}	
-
+							
 							else if (prodLineResidentials == "premium"){
-								var totalPremiumResidentials = ((parseInt(apartmentsResidential) * (parseInt(floorsResidential) - parseInt(basementsResidential))) * parseInt(premiumUnitPrice) * parseInt(premiumInstallFee));
+								var totalPremiumResidentials = parseInt(nbElevators) * parseInt(premiumUnitPrice) * parseInt(premiumInstallFee);
 								document.getElementById("totalCostResidentials").innerHTML = totalPremiumResidentials;
 								}	
-							
+								
 							else if (prodLineResidentials == "excelium"){
-								var totalExceliumResidentials = ((parseInt(apartmentsResidential) * (parseInt(floorsResidential) - parseInt(basementsResidential))) * parseInt(exceliumUnitPrice) * parseInt(exceliumInstallFee));
-								document.getElementById("totalCostResidentials").innerHTML = totalPremiumResidentials;
+								var totalExceliumResidentials = parseInt(nbElevators) * parseInt(exceliumUnitPrice) * parseInt(exceliumInstallFee);
+								document.getElementById("totalCostResidentials").innerHTML = totalExceliumResidentials;
 								}
-
-							console.log(totalResidentials);
-							
 							};
-
-
-
-
-
 
 					</script>
 
